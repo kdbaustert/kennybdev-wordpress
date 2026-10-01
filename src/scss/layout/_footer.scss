@@ -1,0 +1,41 @@
+.site-footer {
+	padding-block: 4rem 2rem;
+	border-top: 1px solid $kb-line;
+	font-size: 0.9375rem;
+
+	h2 {
+		@include eyebrow;
+		margin-bottom: 1rem;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	li + li {
+		margin-top: 0.4rem;
+	}
+
+	a {
+		color: $kb-muted;
+		text-decoration: none;
+
+		&:hover {
+			color: $kb-ink;
+		}
+	}
+}
+
+.site-footer__base {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-top: 4rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid $kb-line;
+	font-family: $font-family-monospace;
+	font-size: 0.75rem;
+}

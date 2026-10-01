@@ -1,0 +1,42 @@
+// Tech chips. PHP prints style="--chip: #hex" from kennyb_tech_color(), and
+// the Vue filter does the same, so one rule colours both.
+
+.chip {
+	--chip: #{$kb-muted};
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	padding: 0.3em 0.8em;
+	border: 1px solid color-mix(in srgb, var(--chip) 45%, transparent);
+	border-radius: 999px;
+	background: color-mix(in srgb, var(--chip) 10%, transparent);
+	color: var(--chip);
+	font-family: $font-family-monospace;
+	font-size: 0.75rem;
+	line-height: 1.4;
+	white-space: nowrap;
+}
+
+button.chip {
+	cursor: pointer;
+	transition: background-color 0.25s $kb-ease, color 0.25s $kb-ease;
+
+	&:hover {
+		background: color-mix(in srgb, var(--chip) 22%, transparent);
+	}
+
+	&[aria-pressed="true"] {
+		background: var(--chip);
+		border-color: var(--chip);
+		color: $kb-base;
+	}
+}
+
+.chip-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}

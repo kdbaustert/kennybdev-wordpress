@@ -1,0 +1,76 @@
+// Post and page content written in the block editor.
+
+.prose {
+	max-width: 42rem;
+	font-size: 1.0625rem;
+	line-height: 1.75;
+
+	> * + * {
+		margin-top: 1.25em;
+	}
+
+	h2,
+	h3,
+	h4 {
+		margin-top: 2.25em;
+		color: $kb-ink;
+		letter-spacing: -0.01em;
+		text-transform: none;
+	}
+
+	h2 {
+		font-size: 1.75rem;
+	}
+
+	h3 {
+		font-size: 1.375rem;
+	}
+
+	p,
+	li {
+		color: color-mix(in srgb, $kb-ink 78%, $kb-muted);
+	}
+
+	a {
+		color: $kb-ink;
+		text-decoration-color: $kb-accent;
+
+		&:hover {
+			color: $kb-accent;
+		}
+	}
+
+	code {
+		padding: 0.15em 0.4em;
+		border-radius: 0.25rem;
+		background: $kb-elevated;
+		color: $kb-cyan;
+		font-size: 0.875em;
+	}
+
+	pre {
+		padding: 1.25rem 1.5rem;
+		border: 1px solid $kb-line;
+		border-radius: 0.5rem;
+		background: $kb-surface;
+
+		code {
+			padding: 0;
+			background: none;
+			color: $kb-ink;
+		}
+	}
+
+	blockquote {
+		padding-left: 1.25rem;
+		border-left: 2px solid $kb-accent;
+		color: $kb-ink;
+		font-size: 1.25rem;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 0.5rem;
+	}
+}

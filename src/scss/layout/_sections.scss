@@ -1,0 +1,78 @@
+.section {
+	padding-block: $kb-section-y;
+	border-top: 1px solid $kb-line;
+
+	@include below {
+		padding-block: $kb-section-y-sm;
+	}
+}
+
+.section__head {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 28rem);
+	gap: 2rem 4rem;
+	align-items: end;
+	margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+
+	@include below {
+		grid-template-columns: 1fr;
+	}
+}
+
+.section__title {
+	@include outlined;
+	font-size: clamp(2.5rem, 7vw, 6rem);
+	line-height: 0.9;
+	letter-spacing: -0.03em;
+	margin: 0;
+}
+
+.section__lede {
+	margin: 0;
+	max-width: 34rem;
+}
+
+.page-header {
+	padding-block: clamp(4rem, 10vh, 7rem) clamp(2rem, 5vh, 3.5rem);
+}
+
+.page-title {
+	@include outlined;
+	font-size: clamp(2.75rem, 8vw, 7rem);
+	line-height: 0.9;
+	letter-spacing: -0.035em;
+	overflow-wrap: anywhere;
+}
+
+.statement {
+	color: $kb-ink;
+	font-size: clamp(1.4rem, 2.6vw, 2.25rem);
+	font-weight: 500;
+	line-height: 1.3;
+	letter-spacing: -0.01em;
+	max-width: 30em;
+}
+
+.capabilities {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+	gap: 0;
+	margin: clamp(3rem, 6vw, 5rem) 0 0;
+	border-top: 1px solid $kb-line;
+
+	> div {
+		padding: 1.25rem 1.5rem 1.25rem 0;
+		border-bottom: 1px solid $kb-line;
+	}
+
+	dt {
+		@include eyebrow;
+		color: $info;
+		margin-bottom: 0.4rem;
+	}
+
+	dd {
+		margin: 0;
+		color: $kb-ink;
+	}
+}

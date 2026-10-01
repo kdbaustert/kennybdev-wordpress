@@ -1,0 +1,65 @@
+:root {
+	--kb-accent: #{$kb-accent};
+	--kb-ink: #{$kb-ink};
+	--kb-line: #{$kb-line};
+	--kb-ease: #{$kb-ease};
+}
+
+html {
+	scroll-behavior: smooth;
+
+	@media (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	letter-spacing: 0.01em;
+	-webkit-font-smoothing: antialiased;
+}
+
+::selection {
+	background: $kb-accent;
+	color: $kb-ink;
+}
+
+h1,
+h2,
+h3 {
+	text-transform: uppercase;
+}
+
+a {
+	text-underline-offset: 0.2em;
+	transition: color 0.3s $kb-ease;
+}
+
+:focus-visible {
+	outline: 2px solid $kb-accent;
+	outline-offset: 3px;
+}
+
+.shell {
+	width: 100%;
+	max-width: $kb-shell-max;
+	margin-inline: auto;
+	padding-inline: $kb-shell-pad;
+}
+
+.eyebrow {
+	@include eyebrow;
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.skip-link:focus {
+	position: fixed;
+	top: 1rem;
+	left: 1rem;
+	z-index: 1080;
+	padding: 0.5rem 1rem;
+	background: $kb-accent;
+	color: $kb-ink;
+	border-radius: 999px;
+}

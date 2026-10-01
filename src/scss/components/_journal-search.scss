@@ -1,0 +1,45 @@
+.journal-search {
+	position: relative;
+	max-width: 36rem;
+	margin-bottom: 3rem;
+}
+
+.journal-search__status {
+	margin: 0.75rem 0 0 1.25rem;
+	font-family: $font-family-monospace;
+	font-size: 0.75rem;
+}
+
+.journal-search__results {
+	margin: 0.75rem 0 0;
+	padding: 0.5rem;
+	list-style: none;
+	background: $kb-elevated;
+	border: 1px solid $kb-line;
+	border-radius: 0.75rem;
+
+	a {
+		display: block;
+		padding: 0.75rem 1rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+
+		&:hover,
+		&:focus-visible {
+			background: $kb-accent-soft;
+		}
+	}
+
+	strong {
+		display: block;
+		color: $kb-ink;
+		font-weight: 600;
+	}
+
+	span {
+		display: block;
+		margin-top: 0.2rem;
+		font-size: 0.875rem;
+		color: $kb-muted;
+	}
+}

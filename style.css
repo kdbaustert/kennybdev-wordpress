@@ -1,0 +1,18 @@
+/*
+Theme Name: Kenny B
+Theme URI: https://kennyb.dev
+Author: Kenny Baustert
+Author URI: https://kennyb.dev
+Description: Portfolio theme mocked up from kennyb.dev. Bootstrap 5 compiled from SCSS, Vue 3 islands for the project filter and journal search, built with Vite. Run npm install && npm run build before activating.
+Version: 1.0.0
+Requires at least: 6.5
+Tested up to: 7.1
+Requires PHP: 8.1
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: kennyb-theme
+Tags: portfolio, blog, dark, custom-menu, featured-images
+
+Styles are compiled from src/scss into dist/theme.css. This file only
+carries the theme header WordPress reads.
+*/

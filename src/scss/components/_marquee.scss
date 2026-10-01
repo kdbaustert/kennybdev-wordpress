@@ -1,0 +1,44 @@
+// The list is printed twice in the markup, so sliding the track by half its
+// width lands on an identical frame and the loop has no visible seam.
+
+.marquee {
+	overflow: hidden;
+	padding-block: 1.1rem;
+	border-block: 1px solid $kb-line;
+	background: $kb-surface;
+}
+
+.marquee__track {
+	display: flex;
+	width: max-content;
+	animation: marquee 40s linear infinite;
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
+}
+
+.marquee__list {
+	display: flex;
+	gap: 2.5rem;
+	margin: 0;
+	padding: 0 2.5rem 0 0;
+	list-style: none;
+	color: $kb-ink;
+	font-weight: 700;
+	font-size: 1.125rem;
+	text-transform: uppercase;
+	white-space: nowrap;
+
+	li::after {
+		content: "✦";
+		margin-left: 2.5rem;
+		color: $kb-accent;
+	}
+}
+
+@keyframes marquee {
+	to {
+		transform: translateX(-50%);
+	}
+}

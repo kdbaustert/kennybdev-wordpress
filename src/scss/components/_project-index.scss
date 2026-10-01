@@ -1,0 +1,101 @@
+// Projects as a typographic index rather than cards: numbered rows,
+// outlined titles that fill on hover, colored tech chips.
+
+.project-filter__controls {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem 2rem;
+	margin-bottom: 2rem;
+
+	.form-control {
+		max-width: 18rem;
+	}
+}
+
+.project-filter__count {
+	@include eyebrow;
+	margin: 0 0 1rem;
+}
+
+.project-index {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-top: 1px solid $kb-line;
+}
+
+.project-row {
+	position: relative;
+	display: grid;
+	grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+	gap: 0.5rem 1.5rem;
+	align-items: baseline;
+	padding-block: clamp(1.25rem, 2.6vw, 2rem);
+	border-bottom: 1px solid $kb-line;
+
+	@include below(640px) {
+		grid-template-columns: 2.5rem minmax(0, 1fr);
+	}
+}
+
+.project-row__num {
+	font-family: $font-family-monospace;
+	font-size: 0.75rem;
+	color: $kb-accent;
+}
+
+.project-row__title {
+	@include outlined;
+	margin: 0;
+	font-size: clamp(1.55rem, 3.6vw, 3.1rem);
+	line-height: 1;
+	letter-spacing: -0.02em;
+	transition: color 0.4s $kb-ease;
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		// Stretch the link over the whole row; the chips stay above it.
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+		}
+	}
+}
+
+.project-row:hover .project-row__title,
+.project-row:focus-within .project-row__title {
+	color: $kb-ink;
+}
+
+.project-row__domain {
+	display: block;
+	margin-top: 0.6rem;
+	font-family: $font-family-monospace;
+	font-size: 0.8125rem;
+	transition: color 0.4s $kb-ease;
+}
+
+.project-row:hover .project-row__domain {
+	color: $kb-accent;
+}
+
+.project-row__tags {
+	position: relative;
+	justify-content: flex-end;
+	max-width: 22rem;
+
+	@include below(640px) {
+		grid-column: 2;
+		justify-content: flex-start;
+	}
+}
+
+.project-empty {
+	padding: 3rem 0;
+	border-bottom: 1px solid $kb-line;
+}

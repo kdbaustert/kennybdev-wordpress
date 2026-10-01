@@ -1,0 +1,95 @@
+.hero {
+	position: relative;
+	padding-block: clamp(4rem, 12vh, 9rem) clamp(3rem, 8vh, 6rem);
+	overflow: hidden;
+
+	// The two-colour glow from kennybdev's header, minus the WebGL.
+	&::before {
+		content: "";
+		position: absolute;
+		inset: -20% -10% auto auto;
+		width: min(70vw, 60rem);
+		aspect-ratio: 1;
+		background:
+			radial-gradient(closest-side at 35% 40%, rgba($kb-accent, 0.3), transparent),
+			radial-gradient(closest-side at 70% 65%, rgba($kb-cyan, 0.2), transparent);
+		filter: blur(40px);
+		pointer-events: none;
+		z-index: -1;
+	}
+}
+
+.hero__status {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin-bottom: 2rem;
+	font-family: $font-family-monospace;
+	font-size: 0.75rem;
+	color: $kb-ink;
+}
+
+.hero__title {
+	@include display-type(3.5rem, 15vw, 15rem);
+	@include outlined;
+	margin: 0;
+
+	span {
+		display: block;
+	}
+
+	// The second line is filled, so the pair reads as one word set two ways.
+	span + span {
+		color: $kb-ink;
+		-webkit-text-stroke: 0;
+	}
+}
+
+.hero__name {
+	margin: 1.5rem 0 0;
+	color: $kb-ink;
+	font-size: clamp(1.1rem, 2vw, 1.5rem);
+	font-weight: 500;
+}
+
+.hero__grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+	gap: 3rem;
+	margin-top: clamp(3rem, 7vw, 5rem);
+
+	@include below {
+		grid-template-columns: 1fr;
+	}
+}
+
+.hero__lede {
+	max-width: 32rem;
+	margin: 0;
+	font-size: 1.125rem;
+}
+
+.hero__meta {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	gap: 0.6rem 1.5rem;
+	margin: 0;
+
+	dt {
+		@include eyebrow;
+		line-height: 1.9;
+	}
+
+	dd {
+		margin: 0;
+		color: $kb-ink;
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			color: $kb-accent;
+		}
+	}
+}

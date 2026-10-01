@@ -1,0 +1,56 @@
+// Bootstrap is imported piece by piece so that our variable overrides land
+// between its functions and its defaults, and so that components this site
+// never uses (carousel, modal, toasts, ...) are not compiled at all.
+
+// 1. Functions first: the overrides below call tint-color() and friends.
+@import "bootstrap/scss/functions";
+
+// 2. Our overrides. Every Bootstrap variable is !default, so whatever is set
+//    here wins over the value Bootstrap would have assigned.
+@import "abstracts/tokens";
+@import "abstracts/bootstrap-overrides";
+
+// 3. Bootstrap's own configuration.
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// 4. Only the components the templates use.
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";
+
+// 5. The theme.
+@import "abstracts/mixins";
+@import "base/base";
+@import "base/wordpress";
+@import "layout/header";
+@import "layout/sections";
+@import "layout/footer";
+@import "components/chips";
+@import "components/hero";
+@import "components/marquee";
+@import "components/project-index";
+@import "components/services";
+@import "components/experience";
+@import "components/post-card";
+@import "components/journal-search";
+@import "components/prose";
+@import "components/contact";

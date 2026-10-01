@@ -1,0 +1,38 @@
+// Classes WordPress core adds to editor content and expects the theme to style.
+
+.alignleft {
+	float: left;
+	margin: 0.5rem 1.5rem 1rem 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.aligncenter {
+	display: block;
+	margin-inline: auto;
+}
+
+.wp-caption-text,
+.wp-element-caption {
+	@include eyebrow;
+	margin-top: 0.5rem;
+	letter-spacing: 0.08em;
+	text-transform: none;
+}
+
+.screen-reader-text {
+	@include visually-hidden;
+}
+
+.sticky .post-card__title::after {
+	content: " (pinned)";
+	color: $kb-muted;
+	font-size: 0.6em;
+}
+
+.bypostauthor > .comment-body .comment-author {
+	color: $kb-accent;
+}

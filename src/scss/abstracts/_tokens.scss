@@ -1,0 +1,19 @@
+// Brand tokens, copied from kennybdev's src/style.css so the two sites match.
+
+$kb-base: #08080b;
+$kb-surface: #101017;
+$kb-elevated: #17171f;
+$kb-ink: #f3f1f6;
+$kb-muted: #8b8a88;
+$kb-line: rgba(255, 255, 255, 0.1);
+$kb-accent: #aa3bff;
+$kb-accent-soft: rgba(170, 59, 255, 0.14);
+$kb-cyan: #5ce1e6;
+$kb-band: #1d1d1d;
+$kb-status: #3ddc84;
+
+$kb-ease: cubic-bezier(0.16, 1, 0.3, 1);
+$kb-section-y: clamp(6rem, 14vh, 11rem);
+$kb-section-y-sm: clamp(3.5rem, 9vh, 5.5rem);
+$kb-shell-max: 1440px;
+$kb-shell-pad: clamp(1.25rem, 5vw, 5rem);

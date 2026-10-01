@@ -1,0 +1,53 @@
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 1030;
+	background: rgba($kb-base, 0.82);
+	backdrop-filter: blur(12px);
+	border-bottom: 1px solid $kb-line;
+
+	.navbar-brand {
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		text-transform: uppercase;
+		color: $kb-ink;
+	}
+
+	.nav-link {
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: $kb-muted;
+
+		&:hover,
+		&.active {
+			color: $kb-ink;
+		}
+	}
+
+	// Menu items get a mono index (00, 01, ...) the same way kennybdev's nav does.
+	.navbar-nav {
+		counter-reset: nav;
+
+		> .nav-item > .nav-link::before {
+			counter-increment: nav;
+			content: counter(nav, decimal-leading-zero) " ";
+			font-family: $font-family-monospace;
+			font-size: 0.6875rem;
+			color: $kb-accent;
+		}
+	}
+
+	.navbar-toggler {
+		border-color: $kb-line;
+		border-radius: 999px;
+	}
+}
+
+.status-dot {
+	display: inline-block;
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 999px;
+	background: $kb-status;
+	box-shadow: 0 0 0 0.25rem rgba($kb-status, 0.18);
+}
